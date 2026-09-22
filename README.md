@@ -75,8 +75,3 @@ A few real issues hit and resolved during development — kept here because they
 - **Hover caption assumption:** initial test assumed the caption text included "View profile," but that text lives in a separate `<a>` tag from the name `<h5>`. Fixed by asserting against the actual DOM structure instead of an assumed one.
 - **iFrame + contenteditable:** the rich-text editor inside the iframe is a `contenteditable` div, not a real `<input>`, so `.clear()` and native click-then-type were unreliable (`InvalidElementStateException` and `ElementClickInterceptedException` from TinyMCE's floating toolbar overlapping the iframe). Resolved by using Selenium's JavaScript executor (`driver.execute_script()`) to set content directly — a legitimate fallback when native interaction with a third-party widget is unreliable.
 
-## Report
-
-![Test report screenshot](screenshots/report-screenshot.png)
-
-*(Add your `report.html` screenshot here — open the file, take a screenshot, save it into a `screenshots/` folder, and update the path above.)*
